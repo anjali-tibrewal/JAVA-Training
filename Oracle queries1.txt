@@ -1,0 +1,97 @@
+1. create table emp( empid int, empname varchar(30), empcity varchar(20), empsal int);
+
+2. insert into emp values(101,'anjali','rkl', 37000);
+
+3. insert into emp values(102,'abc','pune', 57000);
+
+4. insert into emp values(103,'qwe','mumbai', 23000);
+
+5. insert into emp values(104,'pqr','kolkata', 10000);
+
+6. insert into emp values(105,'awer','pune', 34570);
+
+7. insert into emp values(107,'utve','rkl', 90000);
+
+8. insert into emp values(108,'xyz','gujrat', 32456);
+
+9.insert into emp values(109,'sdf','rkl', 37000);
+
+10. insert into emp values(110,'bcd','mumbai', 10006);
+
+11. select * from emp;
+
+12. set linesize=30;
+
+13. select * from emp;
+
+14 .select empcity from emp;
+
+15. select empsal, empcity from emp;
+
+16. select * from emp where empsal>50000;
+
+17. select * from emp where empname='anjali';
+
+18. select * from emp where empcity in ('pune', 'rkl');
+
+19. select * from emp where empcity not in ('mumbai','pune','rkl');
+
+20. select * from emp where empsal between 30000 and 50000;
+
+21. select * from emp where (empcity='kolkata' or empcity='pune');
+
+22.Select * from emp where (empcity='rkl' and empsal='37000');
+
+
+23. select * from emp where empname like 'a%';
+
+24. select * from emp where empname like '%e';
+
+26. select * from emp where empcity like '____';
+
+27. select * from emp where empname like '%we%';
+
+28. select * from emp where empname like '___%';
+
+29. select sum(empsal) from emp group by empcity;
+
+30. delete from emp where empid='110';
+
+31. select avg(salary), max(salary), min (salary) ,sum(salary) from employees where job_id like '%REP%';
+
+
+32. select min(hire_date), max(hire_date) from employees;
+
+
+33.select count (*)  from employees where department_id=50;
+
+34.select count(commission_pct) from employees where department_id=80;
+
+35.select count( distinct department_id) from employees;
+
+36.select department_id, avg(salary) from employees group by department_id;
+
+37. select avg(salary) from employees group by department_id;
+
+38. select department_id, job_id, sum(salary) from employees where department_id> 40 group by department_id, job_id order by department_id;
+
+39. select department_id, max(salary) from employees group by department_id having max(salary)>10000;
+
+40. select job_id, sum(salary) payroll from employees where job_id not like '%REP%' group by job_id having sum(salary)>13000 order by sum(salary);
+
+41. select max(avg(salary)) from employees group by department_id;
+
+42. select last_name, salary from employees where salary>(select salary from employees where last_name='Abel');
+
+43. select last_name, job_id, salary from employees where job_id=(select job_id from employees where last_name='Seo') and salary > (select salary from employees where last_name='Seo');
+
+44. select last_name, job_id, salary from employees where salary=(select min(salary) from employees);
+
+45. select department_id , min(salary) from employees group by department_id having min(salary) >(select min(salary) from employees where department_id=50);
+
+46. select employee_id, last_name, job_id, salary from employees where salary< any(select salary from employees where job_id='IT_PROG') and job_id<> 'IT_PROG;
+
+47. select employee_id, last_name, job_id, salary from employees where salary< all(select salary from employees where job_id='IT_PROG') and job_id<> 'IT_PROG;
+
+
+
