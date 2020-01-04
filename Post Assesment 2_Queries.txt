@@ -1,0 +1,25 @@
+1. 	create table emp1(emp_no int, emp_name varchar(20), dept_no int, salary int);
+	insert into emp1 values (001, 'anjali',101,30000);
+	insert into emp1 values (002, 'anjali',204,36000);
+	insert into emp1 values (032, 'abcd',302,236000);
+	insert into emp1 values (005, 'abced',104,2360);
+	create table dept1(dept_no int, dept_name varchar(30), location varchar(20));
+   	 insert into dept1 values(101,'manager','mumbai');
+ 	insert into dept1 values(204,'clerk','pune');
+	insert into dept1 values(302,'IT_clerk','mumbai');
+	insert into dept1 values(104,'IT_clerk','mumbai');
+    	select * from emp1 inner join dept1 on emp1.dept_no=dept1.dept_no where(salary>20000) and location='mumbai';
+
+2. 	create table emp12(emp_id number(4)not null,last_name varchar2(30)not null,first_name varchar2(30),dept_id number(2));
+    	insert into emp12 values(1234,'mishra','delhi',20);
+    	insert into emp12 values(123,'sachin','mumbai',26);
+    	insert into emp12 values(1234,'sachin','patna',24);
+    	insert into emp12 values(1203,'anjlali','rkl',27);
+    	insert into emp12 values(1209,'sachin','goa',27);
+    	select count(distinct dept_id) as count from emp12 where last_name='sachin';
+
+3. 	SELECT FIRST_NAME, HIRE_DATE FROM EMPLOYEES WHERE JOB_ID IN ('IT_PROG', 'SA_MAN');
+
+4. 	SELECT DEPARTMENT_ID FROM EMPLOYEES WHERE COMMISSION_PCT IS NOT NULL GROUP BY DEPARTMENT_ID HAVING COUNT(COMMISSION_PCT)>5;
+
+5. 	SELECT * FROM EMPLOYEES WHERE HIRE_DATE LIKE '%MAY%';
